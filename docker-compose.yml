@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  ore-cli:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BRANCH: master # You can change this to specify a different branch
+    volumes:
+      - ./config:/ore/.config/solana:ro # Mount Solana config
+    environment:
+      - RUST_LOG=info # Set log level, adjust as needed
+    # Command can be customized based on how you want to run ore-cli
+    command: ore --help # This will display help information by default
+
+volumes:
+  solana-config:

@@ -1,0 +1,25 @@
+# Ignore the Solana config file
+config/id.json
+
+# Ignore Git-related files
+.git
+.gitignore
+
+# Ignore Rust-related files and directories
+target/
+Cargo.lock
+
+# Ignore any local environment files
+.env
+
+# Ignore Docker-related files
+Dockerfile
+.dockerignore
+
+# Ignore any log files
+*.log
+
+# Ignore any temporary files
+*.tmp
+*.bak
+*.swp
