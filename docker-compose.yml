@@ -14,4 +14,4 @@ services:
       - RPC_URL="https://api.devnet.solana.com"
       - BUFFER_TIME=5
       - NETWORK=devnet
-      - THREAD_COUNT=8
+      - THREAD_COUNT=12
