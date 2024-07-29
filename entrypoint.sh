@@ -27,4 +27,6 @@ if [ -n "$THREAD_COUNT" ]; then
   cmd="$cmd --threads \"$THREAD_COUNT\""
 fi
 
+sh -c "./ore --help"
+
 sh -c "$cmd"

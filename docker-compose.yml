@@ -11,8 +11,7 @@ services:
       - ./config:/ore/.config/solana:ro # Mount Solana config
     environment:
       - RUST_LOG=info # Set log level, adjust as needed
-    # Command can be customized based on how you want to run ore-cli
-    command: ore --help # This will display help information by default
-
-volumes:
-  solana-config:
+      - RPC_URL="https://api.devnet.solana.com"
+      - BUFFER_TIME=5
+      - NETWORK=devnet
+      - THREAD_COUNT=8
