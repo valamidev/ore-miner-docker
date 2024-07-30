@@ -92,14 +92,15 @@ docker-compose up
 Open `docker-compose.yml` and change the following environment variables as needed:
 
 ```
-    environment:
-      - RUST_LOG=info
-      - RPC_URL="https://api.devnet.solana.com"
-      - BUFFER_TIME=5
-      - NETWORK=devnet
-      - THREAD_COUNT=12
+    command:
+      [
+        "ore",
+        "--rpc",
+        "https://api.devnet.solana.com",
+        "mine",
+        "--buffer-time",
+        "5",  # Buffer time in seconds
+        "--threads",
+        "6", # Number of threads to use
+      ]
 ```
-
-Credit:
-
-- [KlementXV](https://github.com/KlementXV/ore-cli/tree/master)

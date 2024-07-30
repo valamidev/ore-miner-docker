@@ -5,13 +5,17 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        BRANCH: master # You can change this to specify a different branch
+    command:
+      [
+        "ore",
+        "--rpc",
+        "https://api.devnet.solana.com",
+        "mine",
+        "--buffer-time",
+        "5",
+        "--threads",
+        "6",
+      ]
     volumes:
-      - ./config:/ore/.config/solana:ro # Mount Solana config
-    environment:
-      - RUST_LOG=info # Set log level, adjust as needed
-      - RPC_URL="https://api.devnet.solana.com"
-      - BUFFER_TIME=5
-      - NETWORK=devnet
-      - THREAD_COUNT=12
+      - ./config:/root/.config/solana:ro # Mount Solana config
+
