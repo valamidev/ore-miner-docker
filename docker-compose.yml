@@ -2,6 +2,7 @@ version: "3.8"
 
 services:
   ore-cli:
+    restart: always
     build:
       context: ./ore-cli
       dockerfile: Dockerfile

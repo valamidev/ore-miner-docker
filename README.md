@@ -11,14 +11,6 @@ Before you begin, ensure you have the following installed on your machine:
 - [Docker](https://docs.docker.com/get-docker/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 
-Solana-cli for generate keypair:
-
-- [Solana CLI](https://docs.solanalabs.com/cli/install)
-
-```sh
-solana-keygen new --outfile ./id.json
-```
-
 ## Installation
 
 1. **Clone the repository**:
@@ -26,20 +18,20 @@ solana-keygen new --outfile ./id.json
    ```sh
    git clone https://github.com/valamidev/ore-miner-docker.git
    cd ore-miner-docker
+   docker-compose build --no-cache
    ```
 
-2. **Create a Solana Wallet file and copy into the ./config/id folder**:
+2. **Run Solana Cli to generate Keypair**:
 
    ```sh
-   solana-keygen new --outfile ./id.json
-   sudo mv id.json ./config/id.json
+   docker-compose up solana-cli
    ```
 
 3. **Get Solana Devnet Faucet**:
 
    - [Solana Faucet](https://faucet.solana.com/)
 
-   - Use your wallet's PublicKey to receive faucet tokens
+   - Your wallet address in `./config/publicKey` file
 
    - Verify that your account has been funded:
 
@@ -48,7 +40,7 @@ solana-keygen new --outfile ./id.json
 4. **Build and start the Docker containers**:
 
    ```sh
-   docker-compose up --build
+   docker-compose up ore-cli
    ```
 
 5. **Enjoy**
@@ -77,14 +69,6 @@ ore-cli-1  |   -V, --version                       Print version
 ore-cli-1  |
 ore-cli-1  | Stake balance: 0.00604324633 ORE
 
-```
-
-## Usage
-
-To launch the ore mining application, simply run:
-
-```sh
-docker-compose up
 ```
 
 ## Config
