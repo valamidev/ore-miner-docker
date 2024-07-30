@@ -99,3 +99,7 @@ Open `docker-compose.yml` and change the following environment variables as need
       - NETWORK=devnet
       - THREAD_COUNT=12
 ```
+
+Credit:
+
+- [KlementXV](https://github.com/KlementXV/ore-cli/tree/master)
