@@ -3,7 +3,7 @@ version: "3.8"
 services:
   ore-cli:
     build:
-      context: .
+      context: ./ore-cli
       dockerfile: Dockerfile
     command:
       [
@@ -18,4 +18,9 @@ services:
       ]
     volumes:
       - ./config:/root/.config/solana:ro # Mount Solana config
-
+  solana-cli:
+    build:
+      context: ./solana-cli
+      dockerfile: Dockerfile
+    volumes:
+      - ./config:/usr/src/app/config
