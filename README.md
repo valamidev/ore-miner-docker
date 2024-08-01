@@ -4,6 +4,11 @@
 
 `ore-miner-docker` is a Dockerized version of the [Ore CLI](https://github.com/regolith-labs/ore-cli) application. It is a Solana-based application that allows you to mine ORE tokens.
 
+### Based on:
+
+[Create Ore-cli Docker image](https://crates.io/crates/ore-cli)
+[@solana/web3.js](https://www.npmjs.com/package/@solana/web3.js)
+
 ## Prerequisites
 
 Before you begin, ensure you have the following installed on your machine:
