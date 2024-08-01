@@ -16,6 +16,8 @@ services:
         "${BUFFER_TIME}",
         "--threads",
         "${THREADS}",
+        "--priority-fee",
+        "${PRIORITY_FEE}",
       ]
     volumes:
       - ./config:/root/.config/solana:ro # Mount Solana config
