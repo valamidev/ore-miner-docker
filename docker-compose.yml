@@ -10,12 +10,12 @@ services:
       [
         "ore",
         "--rpc",
-        "https://api.devnet.solana.com",
+        "${SOLANA_RPC_URL}",
         "mine",
         "--buffer-time",
-        "5",
+        "${BUFFER_TIME}",
         "--threads",
-        "6",
+        "${THREADS}",
       ]
     volumes:
       - ./config:/root/.config/solana:ro # Mount Solana config

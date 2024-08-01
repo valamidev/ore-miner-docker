@@ -32,7 +32,13 @@ Before you begin, ensure you have the following installed on your machine:
    docker-compose up solana-cli
    ```
 
-3. **Get Solana Devnet Faucet**:
+3. **Rename `.env.example` to `.env`**:
+
+   ```sh
+   sudo cp .env.example .env
+   ```
+
+4. **Get Solana Devnet Faucet**:
 
    - [Solana Faucet](https://faucet.solana.com/)
 
@@ -42,13 +48,13 @@ Before you begin, ensure you have the following installed on your machine:
 
    - [Solana Devnet Explorer](https://explorer.solana.com/?cluster=devnet)
 
-4. **Build and start the Docker containers**:
+5. **Build and start the Docker containers**:
 
    ```sh
    docker-compose up ore-cli
    ```
 
-5. **Enjoy**
+6. **Enjoy**
 
 ```sh
 ore-cli-1  | Using custom RPC_URL: "https://api.devnet.solana.com"
@@ -78,18 +84,10 @@ ore-cli-1  | Stake balance: 0.00604324633 ORE
 
 ## Config
 
-Open `docker-compose.yml` and change the following environment variables as needed:
+Open `.env` and change the following environment variables as needed:
 
 ```
-    command:
-      [
-        "ore",
-        "--rpc",
-        "https://api.devnet.solana.com",
-        "mine",
-        "--buffer-time",
-        "5",  # Buffer time in seconds
-        "--threads",
-        "6", # Number of threads to use
-      ]
+   SOLANA_RPC_URL=https://api.devnet.solana.com
+   BUFFER_TIME=5
+   THREADS=6
 ```
