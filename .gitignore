@@ -1,3 +1,4 @@
 
 config/id.json
 config/publicKey
+/solana-cli/app/node_modules
