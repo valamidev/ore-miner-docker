@@ -6,21 +6,13 @@ services:
     build:
       context: ./ore-cli
       dockerfile: Dockerfile
-    command:
-      [
-        "ore",
-        "--rpc",
-        "${SOLANA_RPC_URL}",
-        "mine",
-        "--buffer-time",
-        "${BUFFER_TIME}",
-        "--threads",
-        "${THREADS}",
-        "--priority-fee",
-        "${PRIORITY_FEE}",
-      ]
     volumes:
       - ./config:/root/.config/solana:ro # Mount Solana config
+    environment:
+      - SOLANA_RPC_URL=${SOLANA_RPC_URL}
+      - BUFFER_TIME=${BUFFER_TIME}
+      - THREADS=${THREADS}
+      - PRIORITY_FEE=${PRIORITY_FEE}
   solana-cli:
     build:
       context: ./solana-cli
